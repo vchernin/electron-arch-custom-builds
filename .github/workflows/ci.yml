@@ -10,7 +10,7 @@ on:  # yamllint disable-line rule:truthy
 jobs:
   validation:
     runs-on: ubuntu-latest
-    name: Validate a Pull Request
+    name: Build Electron Arch package
     steps:
       - uses: actions/checkout@v1
 
