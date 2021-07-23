@@ -17,7 +17,8 @@ jobs:
       - name: Validate PKGBUILD
         id: validate-pkgbuild
         uses: 2m/arch-pkgbuild-builder@v1.16
-          target: 'pkgbuild'
+	with:	
+	  target: 'pkgbuild'
           pkgname: 'ucm-bin'
 
       - name: Validate SRCINFO
