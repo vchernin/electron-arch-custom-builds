@@ -1,2 +1,41 @@
-- name: Arch Linux PKGBUILD builder action
-  uses: 2m/arch-pkgbuild-builder@v1.16
+--- 
+name: Arch Linux PKGBUILD builder action
+
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    name: Validate a Pull Request
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Validate PKGBUILD
+        id: validate-pkgbuild
+        uses: 2m/arch-pkgbuild-builder@v1.16
+          target: 'pkgbuild'
+          pkgname: 'ucm-bin'
+
+      - name: Validate SRCINFO
+        id: validate-srcinfo
+        uses: 2m/arch-pkgbuild-builder@v1.16
+        with:
+          target: 'srcinfo'
+          pkgname: 'ucm-bin'
+
+      - name: Validate binary
+        id: validate-binary
+        uses: 2m/arch-pkgbuild-builder@v1.16
+        with:
+          target: 'run'
+          pkgname: 'ucm-bin'
+          command: 'ucm --version'
+
+      - name: yaml-lint
+        uses: ibiqlik/action-yamllint@v0.0.2
+        with:
+          file_or_dir: .github/workflows/ci.yml
