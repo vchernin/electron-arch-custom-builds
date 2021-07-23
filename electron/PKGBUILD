@@ -2,7 +2,7 @@
 
 pkgname=electron
 pkgver=13.1.7
-_commit=971ec77b966ef6924418d3e766d383d4b4d1900f
+_commit=5ed721ca71df500a3fbba0c4134f006ef40152fa
 _chromiumver=91.0.4472.124
 _gcc_patchset=5
 pkgrel=1
@@ -16,7 +16,7 @@ makedepends=('clang' 'git' 'gn' 'gperf' 'harfbuzz-icu' 'http-parser'
              'java-runtime-headless' 'jsoncpp' 'libnotify' 'lld' 'llvm' 'ninja'
              'npm' 'pciutils' 'pipewire' 'python2' 'wget' 'yarn' 'kde-cli-tools' 'libappindicator-gtk3'
              'trash-cli' 'xdg-utils')
-source=('git+https://github.com/electron/electron.git'
+source=('git+https://github.com/lionirdeadman/electron.git'
         'git+https://chromium.googlesource.com/chromium/tools/depot_tools.git'
         "https://github.com/stha09/chromium-patches/releases/download/chromium-${_chromiumver%%.*}-patchset-${_gcc_patchset}/chromium-${_chromiumver%%.*}-patchset-${_gcc_patchset}.tar.xz"
         "${pkgname}-launcher.sh"
