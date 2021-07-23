@@ -2,8 +2,8 @@
 
 pkgname=electron
 pkgver=13.0.1
-_commit=1fa24f77a31ac520b8ba61c3ab296566ebec50e4
-_chromiumver=91.0.4472.124
+_commit=51213f656bfac341f40da9fb84eff27df25d9d68
+_chromiumver=91.0.4472.69
 _gcc_patchset=5
 pkgrel=1
 pkgdesc='Build cross platform desktop apps with web technologies'
