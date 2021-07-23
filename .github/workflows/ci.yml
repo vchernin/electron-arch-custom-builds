@@ -19,22 +19,22 @@ jobs:
         uses: 2m/arch-pkgbuild-builder@v1.16
         with:
           target: 'pkgbuild'
-          pkgname: 'ucm-bin'
+          pkgname: 'electron'
 
       - name: Validate SRCINFO
         id: validate-srcinfo
         uses: 2m/arch-pkgbuild-builder@v1.16
         with:
           target: 'srcinfo'
-          pkgname: 'ucm-bin'
+          pkgname: 'electron'
 
       - name: Validate binary
         id: validate-binary
         uses: 2m/arch-pkgbuild-builder@v1.16
         with:
           target: 'run'
-          pkgname: 'ucm-bin'
-          command: 'ucm --version'
+          pkgname: 'electron'
+          command: 'electron --version'
 
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v0.0.2
